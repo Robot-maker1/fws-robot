@@ -4,6 +4,7 @@ Before doing any operation with the robot, execute the next command. This comman
 This shell script creates a symbolic link to specific USB port.
 
 ```python
+cd fws-robot/
 sudo bash create_sym_ln.sh
 ```
 
@@ -12,15 +13,15 @@ sudo bash create_sym_ln.sh
 To operate the robot in manual mode, open a new terminal and execute the next two commands.
 
 ```python
-source fws_robot/install/setup.bash
+source fws-robot/install/setup.bash
 ros2 launch robot_launch fws_launch.py
 ```
 
 Open another terminal and execute the next three commands.
 
 ```python
-source fws_robot/install/setup.bash
-cd ~/fws_robot/UI/
+source fws-robot/install/setup.bash
+cd ~/fws-robot/UI/
 python3 controller.py
 ```
 
@@ -33,15 +34,15 @@ The controller will appear. Move the red dot to operate the robot. Note that the
 To start map creation, open a new terminal and launch cartographer.
 
 ```python
-source fws_robot/install/setup.bash
+source fws-robot/install/setup.bash
 ros2 launch navigation cartographer_slam.launch.py
 ```
 
 Open another terminal and execute the next three commands just as we did in the "Manual mode" section.
 
 ```python
-source fws_robot/install/setup.bash
-cd ~/fws_robot/UI/
+source fws-robot/install/setup.bash
+cd ~/fws-robot/UI/
 python3 controller.py
 ```
 
@@ -56,6 +57,6 @@ ros2 run nav2_map_server map_saver_cli -f ~/map
 To do robot navigation, open a new terminal and execute the next command.
 
 ```python
-source fws_robot/install/setup.bash
+source fws-robot/install/setup.bash
 ros2 launch navigation navigation_rf2o.py
 ```
